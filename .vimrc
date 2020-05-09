@@ -1,4 +1,8 @@
 
+" first things first! Load sensible.vim and my later additions here overwrite
+" them
+runtime! plugin/sensible.vim
+
 " syntax highlight
 syntax on
 
