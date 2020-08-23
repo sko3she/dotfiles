@@ -18,11 +18,19 @@ set colorcolumn=80
 set hidden
 set history=100
 
+" absolute, relative and hybrid line numbering
+:set number relativenumber
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
+
 " indent
 filetype indent plugin on
-set number
 set nowrap
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
@@ -76,4 +84,9 @@ set whichwrap=b,s,<,>,[,]
 
 " display -- INSERT -- or -- REPLACE -- in statusbar
 set showmode
+
+" -----------------------------------------------------------------------------
+" indentLine plugin
+" -----------------------------------------------------------------------------
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
